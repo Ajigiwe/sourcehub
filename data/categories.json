@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Electronics",
+    "slug": "electronics",
+    "icon": "⚡",
+    "description": "Consumer electronics, components, and accessories.",
+    "parentId": null
+  },
+  {
+    "id": "cat-2",
+    "name": "Apparel & Textiles",
+    "slug": "apparel-textiles",
+    "icon": "👕",
+    "description": "Clothing, fabrics, and fashion accessories.",
+    "parentId": null
+  },
+  {
+    "id": "cat-3",
+    "name": "Home & Garden",
+    "slug": "home-garden",
+    "icon": "🏠",
+    "description": "Furniture, decor, and gardening tools.",
+    "parentId": null
+  },
+  {
+    "id": "cat-4",
+    "name": "Industrial Machinery",
+    "slug": "industrial-machinery",
+    "icon": "⚙️",
+    "description": "Heavy machinery and industrial equipment.",
+    "parentId": null
+  }
+]

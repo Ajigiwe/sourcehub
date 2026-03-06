@@ -1,0 +1,42 @@
+[
+    {
+        "id": "brand-1",
+        "name": "TechNova Solutions",
+        "slug": "technova-solutions",
+        "logo": "https://via.placeholder.com/150?text=TechNova",
+        "tagline": "Innovating the future of connectivity.",
+        "about": "TechNova Solutions specializes in high-performance networking gear and smart home devices. Founded in 2018, we've quickly become a leader in B2B electronics sourcing.",
+        "categoryIds": [
+            "cat-1"
+        ],
+        "website": "https://technova.example.com",
+        "contact": {
+            "email": "sales@technova.example.com",
+            "phone": "+1-555-0123",
+            "whatsapp": "+15550123",
+            "linkedIn": "linkedin.com/company/technova"
+        },
+        "featured": true,
+        "country": "Germany"
+    },
+    {
+        "id": "brand-2",
+        "name": "EcoWear Co.",
+        "slug": "ecowear-co",
+        "logo": "https://via.placeholder.com/150?text=EcoWear",
+        "tagline": "Sustainable fashion for a better planet.",
+        "about": "EcoWear Co. produces ethical apparel using 100% recycled materials. Based in Sweden, we supply retailers worldwide with eco-conscious fashion collections.",
+        "categoryIds": [
+            "cat-2"
+        ],
+        "website": "https://ecowear.example.com",
+        "contact": {
+            "email": "info@ecowear.example.com",
+            "phone": "+46-8-123-4567",
+            "whatsapp": "+4681234567",
+            "linkedIn": "linkedin.com/company/ecowear"
+        },
+        "featured": true,
+        "country": "Sweden"
+    }
+]

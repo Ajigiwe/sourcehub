@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SourceHub | B2B Product Sourcing & Supplier Discovery</title>
+    <meta name="description"
+        content="Discover products and suppliers across categories. Centralized sourcing for professional buyers.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Analytics placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <header id="main-header"></header>
+        <main id="router-view"></main>
+        <footer id="main-footer"></footer>
+    </div>
+
+    <!-- Scripts (Ordered by dependency) -->
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/router.js"></script>
+
+    <!-- Components -->
+    <script src="js/components/SearchBar.js"></script>
+    <script src="js/components/ProductCard.js"></script>
+    <script src="js/components/BrandCard.js"></script>
+    <script src="js/components/CategoryTile.js"></script>
+    <script src="js/components/ContactModal.js"></script>
+    <script src="js/components/Header.js"></script>
+    <script src="js/components/Footer.js"></script>
+
+    <!-- Views & Entry Point -->
+    <script src="js/views.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

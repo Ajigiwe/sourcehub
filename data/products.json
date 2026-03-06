@@ -1,0 +1,83 @@
+[
+    {
+        "id": "prod-1",
+        "name": "NovaStream 5G Router",
+        "brandId": "brand-1",
+        "categoryId": "cat-1",
+        "description": "High-speed 5G industrial router with advanced security protocols and dual-band support. Ideal for remote office setups and industrial IoT applications.",
+        "images": [
+            "https://via.placeholder.com/600x400?text=NovaStream+Router",
+            "https://via.placeholder.com/600x400?text=Ports+View"
+        ],
+        "specs": {
+            "Speed": "Up to 3.4 Gbps",
+            "WiFi": "WiFi 6 (802.11ax)",
+            "LAN Ports": "4x Gigabit Ethernet",
+            "Security": "WPA3, VPN Support"
+        },
+        "priceRange": "$250 - $299",
+        "moq": 10,
+        "leadTimeDays": 14,
+        "tags": [
+            "5G",
+            "Networking",
+            "Industrial",
+            "IoT"
+        ],
+        "featured": true,
+        "createdAt": "2026-03-01T10:00:00Z"
+    },
+    {
+        "id": "prod-2",
+        "name": "Organic Hemp Basic Tee",
+        "brandId": "brand-2",
+        "categoryId": "cat-2",
+        "description": "Ultra-soft, breathable t-shirt made from 100% organic hemp fibers. Durable and moisture-wicking, available in multiple earth-tone colors.",
+        "images": [
+            "https://via.placeholder.com/600x400?text=Hemp+Tee+Front",
+            "https://via.placeholder.com/600x400?text=Hemp+Tee+Back"
+        ],
+        "specs": {
+            "Material": "100% Organic Hemp",
+            "Sizes": "S, M, L, XL, XXL",
+            "Colors": "Olive, Sand, Slate, Ivory",
+            "Care": "Machine wash cold"
+        },
+        "priceRange": "$12.50 - $15.00",
+        "moq": 100,
+        "leadTimeDays": 30,
+        "tags": [
+            "Sustainable",
+            "Eco-friendly",
+            "Apparel",
+            "Wholesale"
+        ],
+        "featured": true,
+        "createdAt": "2026-03-02T12:00:00Z"
+    },
+    {
+        "id": "prod-3",
+        "name": "NovaSmart Mesh Node",
+        "brandId": "brand-1",
+        "categoryId": "cat-1",
+        "description": "Expand your NovaStream network with these seamless mesh nodes. Plug-and-play setup with intuitive mobile app management.",
+        "images": [
+            "https://via.placeholder.com/600x400?text=NovaSmart+Mesh+Node"
+        ],
+        "specs": {
+            "Coverage": "Up to 1500 sq ft per node",
+            "Backhaul": "Tri-band support",
+            "Dimensions": "100mm x 100mm"
+        },
+        "priceRange": "$89 - $110",
+        "moq": 20,
+        "leadTimeDays": 7,
+        "tags": [
+            "Mesh Networking",
+            "Smart Home",
+            "WiFi Extension"
+        ],
+        "featured": false,
+        "createdAt": "2026-03-03T09:00:00Z"
+    }
+]
