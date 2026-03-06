@@ -432,5 +432,346 @@ window.Views = {
                 return reviewsContainer;
             })()
         );
+    },
+
+    AddProduct: async () => {
+        const categories = await window.DataService.getCategories();
+        const brands = await window.DataService.getBrands();
+        const suppliers = await window.DataService.getSuppliers();
+
+        let imageDataUrl = '';
+        let offeringCount = 0;
+
+        const container = window.Utils.createElement('div', { className: 'section container' },
+            window.Utils.createElement('h1', { style: 'margin-bottom: 8px;' }, 'Add New Product'),
+            window.Utils.createElement('p', { className: 'text-muted', style: 'margin-bottom: 32px;' }, 'Fill in the details below to list a new product on SourceHub.')
+        );
+
+        const form = window.Utils.createElement('form', {
+            style: 'max-width: 800px; background: #fff; padding: 32px; border-radius: 12px; border: 1px solid var(--border-color);',
+            onsubmit: (e) => {
+                e.preventDefault();
+
+                // Gather form data
+                const name = form.querySelector('#ap-name').value.trim();
+                const categoryId = form.querySelector('#ap-category').value;
+                const brandId = form.querySelector('#ap-brand').value;
+                const description = form.querySelector('#ap-description').value.trim();
+
+                if (!name || !categoryId || !brandId || !description) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                if (!imageDataUrl) {
+                    alert('Please upload a product image.');
+                    return;
+                }
+
+                // Gather offerings
+                const offeringEls = form.querySelectorAll('.offering-row');
+                const offerings = [];
+                offeringEls.forEach(row => {
+                    const supplierId = row.querySelector('.of-supplier').value;
+                    const price = parseFloat(row.querySelector('.of-price').value);
+                    const condition = row.querySelector('.of-condition').value;
+                    const warranty = row.querySelector('.of-warranty').value.trim();
+
+                    // Gather specs
+                    const specInputs = row.querySelectorAll('.spec-row');
+                    const specs = {};
+                    specInputs.forEach(sr => {
+                        const key = sr.querySelector('.spec-key').value.trim();
+                        const val = sr.querySelector('.spec-val').value.trim();
+                        if (key && val) specs[key] = val;
+                    });
+
+                    if (supplierId && price && condition && warranty) {
+                        offerings.push({ supplierId, price, condition, warranty, specs });
+                    }
+                });
+
+                if (offerings.length === 0) {
+                    alert('Please add at least one supplier offering.');
+                    return;
+                }
+
+                const productId = 'p-user-' + Date.now();
+                const newProduct = {
+                    id: productId,
+                    name,
+                    brandId,
+                    categoryId,
+                    images: [imageDataUrl],
+                    description,
+                    offerings
+                };
+
+                // Save to localStorage
+                const existing = JSON.parse(localStorage.getItem('sourcehub-user-products') || '[]');
+                existing.push(newProduct);
+                localStorage.setItem('sourcehub-user-products', JSON.stringify(existing));
+
+                // Navigate to the new product
+                window.location.hash = `#/products/${productId}`;
+            }
+        });
+
+        // -- Product Name --
+        const nameGroup = window.Utils.createElement('div', { className: 'form-group' },
+            window.Utils.createElement('label', { htmlFor: 'ap-name' }, 'Product Name *'),
+            window.Utils.createElement('input', { type: 'text', id: 'ap-name', required: true, className: 'search-input', placeholder: 'e.g. MacBook Pro 16"' })
+        );
+
+        // -- Category --
+        const catSelect = window.Utils.createElement('select', { id: 'ap-category', className: 'search-input', required: true },
+            window.Utils.createElement('option', { value: '' }, '-- Select Category --'),
+            ...categories.map(c => window.Utils.createElement('option', { value: c.id }, c.name))
+        );
+        const catGroup = window.Utils.createElement('div', { className: 'form-group' },
+            window.Utils.createElement('label', { htmlFor: 'ap-category' }, 'Category *'),
+            catSelect
+        );
+
+        // -- Brand (filtered by category) --
+        const brandSelect = window.Utils.createElement('select', { id: 'ap-brand', className: 'search-input', required: true },
+            window.Utils.createElement('option', { value: '' }, '-- Select Brand --'),
+            ...brands.map(b => window.Utils.createElement('option', { value: b.id }, b.name))
+        );
+        catSelect.addEventListener('change', () => {
+            const selCat = catSelect.value;
+            brandSelect.innerHTML = '';
+            brandSelect.appendChild(window.Utils.createElement('option', { value: '' }, '-- Select Brand --'));
+            const filtered = selCat ? brands.filter(b => b.categoryIds.includes(selCat)) : brands;
+            filtered.forEach(b => brandSelect.appendChild(window.Utils.createElement('option', { value: b.id }, b.name)));
+        });
+        const brandGroup = window.Utils.createElement('div', { className: 'form-group' },
+            window.Utils.createElement('label', { htmlFor: 'ap-brand' }, 'Brand *'),
+            brandSelect
+        );
+
+        // -- Description --
+        const descGroup = window.Utils.createElement('div', { className: 'form-group' },
+            window.Utils.createElement('label', { htmlFor: 'ap-description' }, 'Description *'),
+            window.Utils.createElement('textarea', { id: 'ap-description', rows: 3, required: true, className: 'search-input', placeholder: 'Brief product description...', style: 'resize: vertical;' })
+        );
+
+        // -- Image Upload --
+        const imagePreview = window.Utils.createElement('div', {
+            id: 'image-preview',
+            style: 'width: 100%; height: 200px; border: 2px dashed var(--border-color); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-top: 8px; background: var(--secondary-bg); overflow: hidden; cursor: pointer;'
+        }, window.Utils.createElement('span', { className: 'text-muted' }, '📷 Click to upload image'));
+
+        const fileInput = window.Utils.createElement('input', {
+            type: 'file', accept: 'image/*', style: 'display: none;',
+            onchange: (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    imageDataUrl = ev.target.result;
+                    imagePreview.innerHTML = '';
+                    const img = window.Utils.createElement('img', { src: imageDataUrl, style: 'width: 100%; height: 100%; object-fit: cover;' });
+                    imagePreview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        imagePreview.onclick = () => fileInput.click();
+
+        const imageGroup = window.Utils.createElement('div', { className: 'form-group' },
+            window.Utils.createElement('label', {}, 'Product Image *'),
+            fileInput,
+            imagePreview
+        );
+
+        // -- Supplier Offerings Section --
+        const offeringsSection = window.Utils.createElement('div', { style: 'margin-top: 32px; border-top: 1px solid var(--border-color); padding-top: 24px;' },
+            window.Utils.createElement('h3', { style: 'margin-bottom: 16px;' }, 'Supplier Offerings')
+        );
+        const offeringsContainer = window.Utils.createElement('div', { id: 'offerings-container', className: 'flex flex-col gap-16' });
+
+        function createOfferingRow() {
+            offeringCount++;
+            const row = window.Utils.createElement('div', {
+                className: 'offering-row',
+                style: 'padding: 20px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--secondary-bg);'
+            });
+
+            const header = window.Utils.createElement('div', { className: 'flex justify-between items-center', style: 'margin-bottom: 12px;' },
+                window.Utils.createElement('strong', {}, `Offering #${offeringCount}`),
+                window.Utils.createElement('button', {
+                    type: 'button',
+                    style: 'color: #ef4444; font-size: 0.9rem; cursor: pointer; background: none; border: none;',
+                    onclick: () => { row.remove(); }
+                }, '✕ Remove')
+            );
+
+            const supplierSel = window.Utils.createElement('select', { className: 'search-input of-supplier', style: 'margin-bottom: 8px;' },
+                window.Utils.createElement('option', { value: '' }, '-- Select Supplier --'),
+                ...suppliers.map(s => window.Utils.createElement('option', { value: s.id }, s.name))
+            );
+
+            const priceInput = window.Utils.createElement('input', { type: 'number', className: 'search-input of-price', placeholder: 'Price in GH₵', style: 'margin-bottom: 8px;', min: '0', step: '0.01' });
+
+            const conditionSel = window.Utils.createElement('select', { className: 'search-input of-condition', style: 'margin-bottom: 8px;' },
+                window.Utils.createElement('option', { value: 'Brand New' }, 'Brand New'),
+                window.Utils.createElement('option', { value: 'Refurbished - Grade A' }, 'Refurbished - Grade A'),
+                window.Utils.createElement('option', { value: 'Used - Good' }, 'Used - Good'),
+                window.Utils.createElement('option', { value: 'Brand New - Bulk' }, 'Brand New - Bulk')
+            );
+
+            const warrantyInput = window.Utils.createElement('input', { type: 'text', className: 'search-input of-warranty', placeholder: 'Warranty (e.g. 1 Year)', style: 'margin-bottom: 12px;' });
+
+            // Specs
+            const specsLabel = window.Utils.createElement('label', { style: 'font-weight: 500; display: block; margin-bottom: 8px;' }, 'Specifications');
+            const specsContainer = window.Utils.createElement('div', { className: 'specs-container flex flex-col gap-8' });
+
+            function addSpecRow() {
+                const specRow = window.Utils.createElement('div', { className: 'spec-row flex gap-8', style: 'align-items: center;' },
+                    window.Utils.createElement('input', { type: 'text', className: 'search-input spec-key', placeholder: 'e.g. RAM', style: 'flex: 1;' }),
+                    window.Utils.createElement('input', { type: 'text', className: 'search-input spec-val', placeholder: 'e.g. 16GB', style: 'flex: 1;' }),
+                    window.Utils.createElement('button', {
+                        type: 'button',
+                        style: 'color: #ef4444; cursor: pointer; background: none; border: none; font-size: 1.1rem;',
+                        onclick: () => specRow.remove()
+                    }, '✕')
+                );
+                specsContainer.appendChild(specRow);
+            }
+
+            addSpecRow(); // Start with one row
+
+            const addSpecBtn = window.Utils.createElement('button', {
+                type: 'button', className: 'btn-outline', style: 'margin-top: 8px; font-size: 0.85rem; padding: 6px 12px;',
+                onclick: addSpecRow
+            }, '+ Add Spec');
+
+            row.appendChild(header);
+            row.appendChild(supplierSel);
+            row.appendChild(priceInput);
+            row.appendChild(conditionSel);
+            row.appendChild(warrantyInput);
+            row.appendChild(specsLabel);
+            row.appendChild(specsContainer);
+            row.appendChild(addSpecBtn);
+
+            return row;
+        }
+
+        // Add first offering row by default
+        offeringsContainer.appendChild(createOfferingRow());
+
+        const addOfferingBtn = window.Utils.createElement('button', {
+            type: 'button', className: 'btn-outline', style: 'margin-top: 16px; width: 100%; padding: 12px;',
+            onclick: () => offeringsContainer.appendChild(createOfferingRow())
+        }, '+ Add Another Supplier Offering');
+
+        offeringsSection.appendChild(offeringsContainer);
+        offeringsSection.appendChild(addOfferingBtn);
+
+        // -- Submit --
+        const submitBtn = window.Utils.createElement('button', {
+            type: 'submit', className: 'btn-primary',
+            style: 'width: 100%; padding: 16px; font-size: 1.1rem; margin-top: 32px;'
+        }, '🚀 Publish Product');
+
+        // Assemble
+        form.appendChild(nameGroup);
+        form.appendChild(catGroup);
+        form.appendChild(brandGroup);
+        form.appendChild(descGroup);
+        form.appendChild(imageGroup);
+        form.appendChild(offeringsSection);
+        form.appendChild(submitBtn);
+        container.appendChild(form);
+
+        return container;
+    },
+
+    AddSupplier: async () => {
+        const container = window.Utils.createElement('div', { className: 'section container' },
+            window.Utils.createElement('h1', { style: 'margin-bottom: 8px;' }, 'Add New Supplier'),
+            window.Utils.createElement('p', { className: 'text-muted', style: 'margin-bottom: 32px;' }, 'Register a new supplier to make them available for product listings.')
+        );
+
+        const form = window.Utils.createElement('form', {
+            style: 'max-width: 700px; background: #fff; padding: 32px; border-radius: 12px; border: 1px solid var(--border-color);',
+            onsubmit: (e) => {
+                e.preventDefault();
+
+                const name = form.querySelector('#as-name').value.trim();
+                const address = form.querySelector('#as-address').value.trim();
+                const email = form.querySelector('#as-email').value.trim();
+                const phone = form.querySelector('#as-phone').value.trim();
+                const linkedin = form.querySelector('#as-linkedin').value.trim();
+                const twitter = form.querySelector('#as-twitter').value.trim();
+                const facebook = form.querySelector('#as-facebook').value.trim();
+                const instagram = form.querySelector('#as-instagram').value.trim();
+
+                if (!name || !address || !email || !phone) {
+                    alert('Please fill in all required fields (Name, Address, Email, Phone).');
+                    return;
+                }
+
+                const socials = {};
+                if (linkedin) socials.linkedin = linkedin;
+                if (twitter) socials.twitter = twitter;
+                if (facebook) socials.facebook = facebook;
+                if (instagram) socials.instagram = instagram;
+
+                const supplierId = 'sup-user-' + Date.now();
+                const newSupplier = {
+                    id: supplierId,
+                    name,
+                    rating: 0,
+                    verified: false,
+                    address,
+                    email,
+                    phone,
+                    socials,
+                    reviews: []
+                };
+
+                const existing = JSON.parse(localStorage.getItem('sourcehub-user-suppliers') || '[]');
+                existing.push(newSupplier);
+                localStorage.setItem('sourcehub-user-suppliers', JSON.stringify(existing));
+
+                window.location.hash = `#/supplier/${supplierId}`;
+            }
+        });
+
+        // Helper to create form groups
+        function field(id, label, type, placeholder, required) {
+            return window.Utils.createElement('div', { className: 'form-group' },
+                window.Utils.createElement('label', { htmlFor: id }, label + (required ? ' *' : '')),
+                window.Utils.createElement('input', { type, id, className: 'search-input', placeholder, required: !!required })
+            );
+        }
+
+        form.appendChild(field('as-name', 'Supplier Name', 'text', 'e.g. Accra Auto Supplies', true));
+        form.appendChild(field('as-address', 'Address', 'text', 'e.g. 15 Ring Road, Accra, Ghana', true));
+        form.appendChild(field('as-email', 'Email', 'email', 'e.g. info@supplier.com', true));
+        form.appendChild(field('as-phone', 'Phone', 'tel', 'e.g. +233 24 000 0000', true));
+
+        // Social links section
+        const socialsSection = window.Utils.createElement('div', { style: 'margin-top: 24px; border-top: 1px solid var(--border-color); padding-top: 20px;' },
+            window.Utils.createElement('h3', { style: 'margin-bottom: 16px;' }, 'Social Media Links'),
+            window.Utils.createElement('p', { className: 'text-muted', style: 'margin-bottom: 16px; font-size: 0.9rem;' }, 'Optional — add any relevant social profiles.')
+        );
+
+        socialsSection.appendChild(field('as-linkedin', 'LinkedIn', 'url', 'https://linkedin.com/company/...', false));
+        socialsSection.appendChild(field('as-twitter', 'Twitter / X', 'url', 'https://twitter.com/...', false));
+        socialsSection.appendChild(field('as-facebook', 'Facebook', 'url', 'https://facebook.com/...', false));
+        socialsSection.appendChild(field('as-instagram', 'Instagram', 'url', 'https://instagram.com/...', false));
+
+        form.appendChild(socialsSection);
+
+        form.appendChild(window.Utils.createElement('button', {
+            type: 'submit', className: 'btn-primary',
+            style: 'width: 100%; padding: 16px; font-size: 1.1rem; margin-top: 24px;'
+        }, '✅ Register Supplier'));
+
+        container.appendChild(form);
+        return container;
     }
 };

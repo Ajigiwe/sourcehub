@@ -808,11 +808,16 @@ window.SOURCEHUB_DATA = {
 window.DataService = {
     getProducts() {
         const brands = window.SOURCEHUB_DATA.brands;
-        const products = window.SOURCEHUB_DATA.products.map(p => {
+        const seedProducts = window.SOURCEHUB_DATA.products.map(p => {
             const b = brands.find(brand => brand.id === p.brandId);
             return { ...p, brandName: b ? b.name : p.brandId };
         });
-        return Promise.resolve(products);
+        // Merge with user-added products from localStorage
+        const userProducts = JSON.parse(localStorage.getItem('sourcehub-user-products') || '[]').map(p => {
+            const b = brands.find(brand => brand.id === p.brandId);
+            return { ...p, brandName: b ? b.name : p.brandId };
+        });
+        return Promise.resolve([...seedProducts, ...userProducts]);
     },
 
     getBrands() {
@@ -824,7 +829,8 @@ window.DataService = {
     },
 
     getSuppliers() {
-        return Promise.resolve(window.SOURCEHUB_DATA.suppliers);
+        const userSuppliers = JSON.parse(localStorage.getItem('sourcehub-user-suppliers') || '[]');
+        return Promise.resolve([...window.SOURCEHUB_DATA.suppliers, ...userSuppliers]);
     },
 
     async getProductById(id) {
