@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { path: '/brands/:slug', render: window.Views.BrandDetail },
         { path: '/products', render: window.Views.Products },
         { path: '/products/:id', render: window.Views.ProductDetail },
+        { path: '/supplier/:id', render: window.Views.SupplierDetail },
         { path: '/shortlist', render: window.Views.Shortlist },
         { path: '/contact', render: window.Views.Contact }
     ];

@@ -42,19 +42,49 @@ window.SOURCEHUB_DATA = {
             "id": "sup-1",
             "name": "Global Trading Hub",
             "rating": 4.8,
-            "verified": true
+            "verified": true,
+            "address": "12 High Street, Accra, Ghana",
+            "email": "contact@globaltrading.com",
+            "phone": "+233 24 123 4567",
+            "socials": {
+                "linkedin": "https://linkedin.com/company/globaltrading",
+                "twitter": "https://twitter.com/globaltrading"
+            },
+            "reviews": [
+                { "user": "Isaac K.", "rating": 5, "comment": "Very reliable supplier for vehicles. Excellent service!", "date": "2024-02-15" },
+                { "user": "Sarah M.", "rating": 4.5, "comment": "Good prices and fast delivery on laptops.", "date": "2024-03-01" }
+            ]
         },
         {
             "id": "sup-2",
             "name": "Prime Sourcing Co.",
             "rating": 4.5,
-            "verified": true
+            "verified": true,
+            "address": "45 Industrial Area, Kumasi, Ghana",
+            "email": "sales@primesourcing.gh",
+            "phone": "+233 20 987 6543",
+            "socials": {
+                "linkedin": "https://linkedin.com/company/primesourcing",
+                "facebook": "https://facebook.com/primesourcinggh"
+            },
+            "reviews": [
+                { "user": "Kwame O.", "rating": 4, "comment": "Professional team. Products are exactly as described.", "date": "2024-01-20" }
+            ]
         },
         {
             "id": "sup-3",
             "name": "Direct Wholesale Ltd",
             "rating": 4.2,
-            "verified": false
+            "verified": false,
+            "address": "88 Spintex Road, Accra, Ghana",
+            "email": "info@directwholesale.com",
+            "phone": "+233 55 555 1234",
+            "socials": {
+                "instagram": "https://instagram.com/directwholesale"
+            },
+            "reviews": [
+                { "user": "John D.", "rating": 4.2, "comment": "Good variety of shoes at wholesale prices.", "date": "2023-12-10" }
+            ]
         }
     ],
     "brands": [
@@ -820,5 +850,10 @@ window.DataService = {
     async getProductsByBrand(brandId) {
         const products = await this.getProducts();
         return products.filter(p => p.brandId === brandId);
+    },
+
+    async getSupplierById(id) {
+        const suppliers = await this.getSuppliers();
+        return suppliers.find(s => s.id === id);
     }
 };
