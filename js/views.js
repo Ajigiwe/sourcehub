@@ -181,11 +181,7 @@ window.Views = {
         const products = await window.DataService.getProductsByBrand(brand.id);
 
         return window.Utils.createElement('div', { className: 'section container' },
-
             window.Utils.createElement('div', { className: 'brand-hero flex items-center gap-32 flex-wrap', style: 'margin-bottom: 48px;' },
-
-            window.Utils.createElement('div', { className: 'brand-hero flex items-center gap-32', style: 'margin-bottom: 48px;' },
-
                 window.Utils.createElement('img', { src: brand.logo, alt: brand.name, style: 'width: 120px; height: 120px; border-radius: 8px;' }),
                 window.Utils.createElement('div', {},
                     window.Utils.createElement('h1', {}, brand.name),
