@@ -25,10 +25,11 @@ window.Views = {
                     window.Utils.createElement('p', { style: 'font-size: 1.25rem; opacity: 0.8; margin-bottom: 40px; max-width: 600px;' }, 
                         'The professional gateway for bulk vehicle and mobile electronics procurement. Connect with verified global manufacturers in one centralized hub.'
                     ),
-                    window.Utils.createElement('div', { className: 'flex gap-16' },
+                    window.Utils.createElement('div', { className: 'hero-buttons' },
                         window.Utils.createElement('a', { href: '#/products', className: 'btn-primary', style: 'padding: 16px 32px; font-size: 1.1rem;' }, 'Browse Catalog'),
                         window.Utils.createElement('a', { href: '#/categories', className: 'btn-outline', style: 'color: white; border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.05); padding: 16px 32px; font-size: 1.1rem; backdrop-filter: blur(8px);' }, 'Explore Categories')
                     )
+
                 ),
                 window.Utils.createElement('div', { className: 'hero-visual', style: 'position: relative;' },
                     window.Utils.createElement('img', { 
