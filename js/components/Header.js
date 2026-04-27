@@ -37,12 +37,17 @@ window.Header = function () {
         window.Utils.createElement('span', { className: 'hamburger-line' })
     );
 
+    // Desktop Search (integrated into top row)
+    const searchDesktop = window.Utils.createElement('div', { className: 'header-search-desktop' }, window.SearchBar());
+
     topRow.appendChild(headerLeft);
+    topRow.appendChild(searchDesktop);
     topRow.appendChild(headerRight);
     topRow.appendChild(hamburger);
 
     // Mobile menu (hidden by default, toggled by hamburger)
     const mobileMenu = window.Utils.createElement('div', { className: 'mobile-menu' },
+        window.Utils.createElement('div', { className: 'header-search-mobile', style: 'padding: 16px 0;' }, window.SearchBar()),
         window.Utils.createElement('a', { href: '#/products', onclick: () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); } }, '📦 Browse Products'),
         window.Utils.createElement('a', { href: '#/add-product', onclick: () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); } }, '➕ Add Product'),
         window.Utils.createElement('a', { href: '#/add-supplier', onclick: () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); } }, '🏢 Add Supplier'),
@@ -52,7 +57,6 @@ window.Header = function () {
 
     nav.appendChild(topRow);
     nav.appendChild(mobileMenu);
-    nav.appendChild(window.Utils.createElement('div', { className: 'header-search-container' }, window.SearchBar()));
 
     return nav;
 };
