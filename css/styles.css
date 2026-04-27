@@ -285,6 +285,41 @@ header {
     font-size: 14px;
 }
 
+/* Categories */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.category-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 180px;
+    padding: 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+}
+
+.category-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.category-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
 /* Search Bar */
 .search-container {
     position: relative;
