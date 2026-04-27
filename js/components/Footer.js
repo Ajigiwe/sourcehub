@@ -32,19 +32,14 @@ window.Footer = function () {
                     window.Utils.createElement('h4', {}, 'For Suppliers'),
                     window.Utils.createElement('ul', {},
                         window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/add-supplier' }, 'Register Company')),
-                        window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/add-product' }, 'List Products')),
-                        window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/' }, 'Verification Process')),
-                        window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/' }, 'Seller Guidelines'))
+                        window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/add-product' }, 'List Products'))
                     )
                 ),
                 // Links Column 3
                 window.Utils.createElement('div', { className: 'footer-links' },
-                    window.Utils.createElement('h4', {}, 'Corporate'),
+                    window.Utils.createElement('h4', {}, 'Support'),
                     window.Utils.createElement('ul', {},
-                        window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/' }, 'About Us')),
-                        window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/' }, 'Contact Support')),
-                        window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/' }, 'Terms of Service')),
-                        window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/' }, 'Privacy Policy'))
+                        window.Utils.createElement('li', {}, window.Utils.createElement('a', { href: '#/contact' }, 'Contact Support'))
                     )
                 )
             ),
