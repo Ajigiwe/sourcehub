@@ -435,34 +435,39 @@ header {
     display: block;
 }
 
+/* Product Grid & Card */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+}
+
 .product-card {
     background: var(--white);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-card);
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
 }
-
-
-.product-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
 
 .product-image {
     position: relative;
     background: #fdfdfd;
-    height: 250px;
+    height: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 20px;
+    padding: 24px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -470,42 +475,53 @@ header {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .product-card:hover .product-image img {
-    transform: scale(1.05);
-
+    transform: scale(1.08);
 }
 
 .product-info {
-    padding: 16px;
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .brand-badge {
     display: inline-block;
-    padding: 2px 8px;
-    background: var(--secondary-bg);
-    border-radius: var(--radius-full);
-    font-size: 12px;
+    padding: 4px 10px;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .product-title {
-    font-size: 18px;
-    margin-bottom: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-main);
+    line-height: 1.4;
 }
 
 .product-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
 }
 
 .price {
     font-weight: 700;
     color: var(--primary-color);
+    font-size: 1.1rem;
 }
 
 /* Detail Pages */
