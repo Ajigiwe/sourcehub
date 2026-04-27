@@ -318,32 +318,78 @@ header {
 
 
 
-.footer {
-    border-top: 1px solid var(--border-color);
+.footer-premium {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 80px 0 32px;
     margin-top: auto;
 }
 
-.footer-grid {
+.footer-premium .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 48px;
-    margin-bottom: 40px;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 64px;
+    margin-bottom: 64px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--white);
+    letter-spacing: -0.5px;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.footer-links h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .footer-links ul {
-    margin-top: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-links li {
-    margin-bottom: 8px;
-    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--white);
 }
 
 .footer-bottom {
-    padding-top: 24px;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-muted);
-    font-size: 14px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--white);
 }
 
 /* Categories */
@@ -1219,10 +1265,25 @@ header {
     }
 
     /* -- Footer -- */
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+    .footer-premium {
+        padding: 48px 0 24px;
     }
+
+    .footer-premium .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        justify-content: center;
+    }
+
 
     /* -- Modal -- */
     .modal-content {
