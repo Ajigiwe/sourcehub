@@ -114,6 +114,60 @@ main {
     gap: 24px;
 }
 
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--white) !important;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+    padding: 10px 22px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.step-card {
+    padding: 40px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+}
+
 /* Components */
 
 /* Header & Footer */

@@ -27,7 +27,7 @@ window.Views = {
                     ),
                     window.Utils.createElement('div', { className: 'flex gap-16' },
                         window.Utils.createElement('a', { href: '#/products', className: 'btn-primary', style: 'padding: 16px 32px; font-size: 1.1rem;' }, 'Browse Catalog'),
-                        window.Utils.createElement('a', { href: '#/categories', className: 'btn-outline', style: 'color: white; border-color: rgba(255,255,255,0.3); padding: 16px 32px; font-size: 1.1rem;' }, 'Explore Categories')
+                        window.Utils.createElement('a', { href: '#/categories', className: 'btn-outline', style: 'color: white; border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.05); padding: 16px 32px; font-size: 1.1rem; backdrop-filter: blur(8px);' }, 'Explore Categories')
                     )
                 ),
                 window.Utils.createElement('div', { className: 'hero-visual', style: 'position: relative;' },
@@ -43,11 +43,11 @@ window.Views = {
         const trustBar = window.Utils.createElement('section', { style: 'padding: 32px 0; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);' },
             window.Utils.createElement('div', { className: 'container' },
                 window.Utils.createElement('p', { style: 'text-align: center; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px;' }, 'Trusted by industry leaders worldwide'),
-                window.Utils.createElement('div', { className: 'flex justify-between items-center opacity-50 grayscale', style: 'gap: 48px; flex-wrap: wrap; justify-content: center;' },
-                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/toyota/toyota-ar21.svg', style: 'height: 30px;' }),
-                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/mercedesbenz/mercedesbenz-ar21.svg', style: 'height: 30px;' }),
-                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/apple/apple-ar21.svg', style: 'height: 30px;' }),
-                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/samsung/samsung-ar21.svg', style: 'height: 30px;' })
+                window.Utils.createElement('div', { className: 'flex justify-between items-center', style: 'gap: 48px; flex-wrap: wrap; justify-content: center; opacity: 0.7;' },
+                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/toyota/toyota-ar21.svg', style: 'height: 24px;' }),
+                    window.Utils.createElement('img', { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Benz_Logo_2010.svg/2560px-Mercedes-Benz_Logo_2010.svg.png', style: 'height: 24px;' }),
+                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/apple/apple-ar21.svg', style: 'height: 24px;' }),
+                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/samsung/samsung-ar21.svg', style: 'height: 24px;' })
                 )
             )
         );
