@@ -187,10 +187,11 @@ window.Views = {
                                     supplier ? supplier.name : 'Unknown Supplier',
                                     supplier && supplier.verified ? window.Utils.createElement('span', { style: 'color: #10b981; margin-left:8px; font-size: 0.9rem;' }, '✓ Verified') : ''
                                 ),
-                                window.Utils.createElement('div', { className: 'flex gap-16 text-sm text-muted' },
+                                window.Utils.createElement('div', { className: 'flex gap-16 text-sm text-muted', style: 'flex-wrap: wrap;' },
                                     window.Utils.createElement('span', {}, `Rating: ${supplier ? supplier.rating : 'N/A'} ★`),
                                     window.Utils.createElement('span', {}, `Condition: ${offer.condition}`)
                                 )
+
                             ),
 
                             // Specs & Warranty
