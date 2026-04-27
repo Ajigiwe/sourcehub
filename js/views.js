@@ -821,6 +821,7 @@ window.Views = {
             window.Utils.createElement('p', { className: 'text-muted', style: 'margin-bottom: 16px; font-size: 0.9rem;' }, 'Optional — add any relevant social profiles.')
         );
 
+        socialsSection.appendChild(field('as-whatsapp', 'WhatsApp (Active Number)', 'url', 'https://wa.me/...', false));
         socialsSection.appendChild(field('as-linkedin', 'LinkedIn', 'url', 'https://linkedin.com/company/...', false));
         socialsSection.appendChild(field('as-twitter', 'Twitter / X', 'url', 'https://twitter.com/...', false));
         socialsSection.appendChild(field('as-facebook', 'Facebook', 'url', 'https://facebook.com/...', false));
