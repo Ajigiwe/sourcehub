@@ -96,7 +96,11 @@ window.Views = {
         return window.Utils.createElement('div', { className: 'section container' },
             window.Utils.createElement('div', { className: 'product-detail-grid', style: 'margin-bottom: 48px;' },
                 window.Utils.createElement('div', { className: 'product-gallery' },
-                    window.Utils.createElement('img', { src: product.images[0], alt: product.name })
+                    window.Utils.createElement('img', {
+                        src: product.images[0],
+                        alt: product.name,
+                        onerror: (e) => { e.target.src = 'https://ui-avatars.com/api/?name=Product&background=f3f4f6&color=9ca3af&size=800'; }
+                    })
                 ),
                 window.Utils.createElement('div', { className: 'product-main-info' },
                     window.Utils.createElement('span', { className: 'brand-badge' }, brand ? brand.name : 'Unknown Brand'),
@@ -110,7 +114,7 @@ window.Views = {
             ),
 
             // Supplier Offerings Section
-            window.Utils.createElement('div', { className: 'supplier-offerings', style: 'background: var(--secondary-bg); padding: 32px; border-radius: 12px; border: 1px solid var(--border-color);' },
+            window.Utils.createElement('div', { className: 'supplier-offerings', style: 'background: var(--bg-secondary); padding: 32px; border-radius: 12px; border: 1px solid var(--border-color);' },
                 window.Utils.createElement('h2', { style: 'margin-bottom: 24px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;' }, 'Available Suppliers'),
 
                 window.Utils.createElement('div', { className: 'offerings-list flex flex-col gap-16' },
@@ -122,7 +126,7 @@ window.Views = {
                             style: 'background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); gap: 24px; flex-wrap: wrap;'
                         },
                             // Supplier Info
-                            window.Utils.createElement('div', { className: 'supplier-info', style: 'flex: 1; min-width: 200px;' },
+                            window.Utils.createElement('div', { className: 'supplier-info', style: 'flex: 1; min-width: 250px;' },
                                 window.Utils.createElement('h3', { style: 'margin-bottom: 8px;' },
                                     supplier ? supplier.name : 'Unknown Supplier',
                                     supplier && supplier.verified ? window.Utils.createElement('span', { style: 'color: #10b981; margin-left:8px; font-size: 0.9rem;' }, '✓ Verified') : ''
@@ -134,7 +138,7 @@ window.Views = {
                             ),
 
                             // Specs & Warranty
-                            window.Utils.createElement('div', { className: 'offer-specs', style: 'flex: 1; min-width: 150px; padding: 0;' },
+                            window.Utils.createElement('div', { className: 'offer-specs', style: 'flex: 1; min-width: 200px; padding: 0 16px;' },
                                 offer.specs ? window.Utils.createElement('ul', { style: 'list-style: none; padding: 0; margin: 0 0 8px 0; font-size: 0.95rem; line-height: 1.6;' },
                                     ...Object.entries(offer.specs).map(([k, v]) => window.Utils.createElement('li', {},
                                         window.Utils.createElement('strong', { style: 'color: var(--text-color);' }, `${k}: `),
@@ -145,14 +149,14 @@ window.Views = {
                             ),
 
                             // Price and Action
-                            window.Utils.createElement('div', { className: 'offer-action', style: 'text-align: right; flex: 1; min-width: 150px;' },
+                            window.Utils.createElement('div', { className: 'offer-action', style: 'text-align: right; min-width: 200px;' },
                                 window.Utils.createElement('div', { className: 'price-large', style: 'margin-bottom: 12px;' }, `GH₵${offer.price}`),
-                                window.Utils.createElement('button', {
+                                window.Utils.createElement('a', {
+                                    href: supplier && supplier.whatsapp ? supplier.whatsapp : '#',
+                                    target: '_blank',
                                     className: 'btn-primary',
-                                    onclick: () => {
-                                        window.location.hash = `#/supplier/${supplier.id}`;
-                                    }
-                                }, 'View Supplier Profile')
+                                    style: 'background: #25d366; border-color: #25d366; text-decoration: none; display: inline-block;'
+                                }, 'WhatsApp Supplier')
                             )
                         );
                     })
@@ -177,7 +181,11 @@ window.Views = {
         const products = await window.DataService.getProductsByBrand(brand.id);
 
         return window.Utils.createElement('div', { className: 'section container' },
+
             window.Utils.createElement('div', { className: 'brand-hero flex items-center gap-32 flex-wrap', style: 'margin-bottom: 48px;' },
+
+            window.Utils.createElement('div', { className: 'brand-hero flex items-center gap-32', style: 'margin-bottom: 48px;' },
+
                 window.Utils.createElement('img', { src: brand.logo, alt: brand.name, style: 'width: 120px; height: 120px; border-radius: 8px;' }),
                 window.Utils.createElement('div', {},
                     window.Utils.createElement('h1', {}, brand.name),
@@ -281,6 +289,7 @@ window.Views = {
                 )
             )
         );
+
     },
 
     SupplierDetail: async (params) => {
@@ -773,5 +782,7 @@ window.Views = {
 
         container.appendChild(form);
         return container;
+
+
     }
 };

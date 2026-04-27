@@ -23,9 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         { path: '/brands/:slug', render: window.Views.BrandDetail },
         { path: '/products', render: window.Views.Products },
         { path: '/products/:id', render: window.Views.ProductDetail },
+
         { path: '/supplier/:id', render: window.Views.SupplierDetail },
         { path: '/add-product', render: window.Views.AddProduct },
         { path: '/add-supplier', render: window.Views.AddSupplier },
+
+
         { path: '/shortlist', render: window.Views.Shortlist },
         { path: '/contact', render: window.Views.Contact }
     ];

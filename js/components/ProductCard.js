@@ -41,7 +41,12 @@ window.ProductCard = function (product) {
 
     return window.Utils.createElement('div', { className: 'product-card', onclick: () => window.location.hash = `#/products/${id}` },
         window.Utils.createElement('div', { className: 'product-image' },
-            window.Utils.createElement('img', { src: images[0], alt: name, loading: 'lazy' }),
+            window.Utils.createElement('img', {
+                src: images[0],
+                alt: name,
+                loading: 'lazy',
+                onerror: (e) => { e.target.src = 'https://ui-avatars.com/api/?name=Product&background=f3f4f6&color=9ca3af&size=400'; }
+            }),
             window.Utils.createElement('button', {
                 className: `shortlist-toggle ${isShortlisted ? 'active' : ''}`,
                 onclick: toggleShortlist,

@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+.gemini/
+brain/
+implementation_plan.md
+task.md
+walkthrough.md
+expand_catalog.js
+generate_new_data.js
+map_images.js
+remap_images.js

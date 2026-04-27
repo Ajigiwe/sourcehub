@@ -1,5 +1,5 @@
 /**
- * Data Service for SourceHub (Multi-Tier Navigation)
+ * Data Service for SourceHub
  */
 
 window.SOURCEHUB_DATA = {
@@ -9,31 +9,15 @@ window.SOURCEHUB_DATA = {
             "name": "Vehicles",
             "slug": "vehicles",
             "icon": "🚗",
-            "image": "assets/categories/vehicles.png",
+            "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800",
             "description": "Commercial & Personal Vehicles"
-        },
-        {
-            "id": "cat-laptops",
-            "name": "Laptops",
-            "slug": "laptops",
-            "icon": "💻",
-            "image": "assets/categories/laptops.png",
-            "description": "Professional Computing Devices"
-        },
-        {
-            "id": "cat-shoes",
-            "name": "Shoes",
-            "slug": "shoes",
-            "icon": "👟",
-            "image": "assets/categories/shoes.png",
-            "description": "Footwear & Athletic Gear"
         },
         {
             "id": "cat-phones",
             "name": "Phones",
             "slug": "phones",
             "icon": "📱",
-            "image": "assets/categories/phones.png",
+            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800",
             "description": "Smartphones & Mobile Devices"
         }
     ],
@@ -43,48 +27,35 @@ window.SOURCEHUB_DATA = {
             "name": "Global Trading Hub",
             "rating": 4.8,
             "verified": true,
-            "address": "12 High Street, Accra, Ghana",
-            "email": "contact@globaltrading.com",
-            "phone": "+233 24 123 4567",
-            "socials": {
-                "linkedin": "https://linkedin.com/company/globaltrading",
-                "twitter": "https://twitter.com/globaltrading"
-            },
-            "reviews": [
-                { "user": "Isaac K.", "rating": 5, "comment": "Very reliable supplier for vehicles. Excellent service!", "date": "2024-02-15" },
-                { "user": "Sarah M.", "rating": 4.5, "comment": "Good prices and fast delivery on laptops.", "date": "2024-03-01" }
-            ]
+            "whatsapp": "https://wa.me/233500000001"
         },
         {
             "id": "sup-2",
             "name": "Prime Sourcing Co.",
             "rating": 4.5,
             "verified": true,
-            "address": "45 Industrial Area, Kumasi, Ghana",
-            "email": "sales@primesourcing.gh",
-            "phone": "+233 20 987 6543",
-            "socials": {
-                "linkedin": "https://linkedin.com/company/primesourcing",
-                "facebook": "https://facebook.com/primesourcinggh"
-            },
-            "reviews": [
-                { "user": "Kwame O.", "rating": 4, "comment": "Professional team. Products are exactly as described.", "date": "2024-01-20" }
-            ]
+            "whatsapp": "https://wa.me/233500000002"
         },
         {
             "id": "sup-3",
             "name": "Direct Wholesale Ltd",
             "rating": 4.2,
             "verified": false,
-            "address": "88 Spintex Road, Accra, Ghana",
-            "email": "info@directwholesale.com",
-            "phone": "+233 55 555 1234",
-            "socials": {
-                "instagram": "https://instagram.com/directwholesale"
-            },
-            "reviews": [
-                { "user": "John D.", "rating": 4.2, "comment": "Good variety of shoes at wholesale prices.", "date": "2023-12-10" }
-            ]
+            "whatsapp": "https://wa.me/233500000003"
+        },
+        {
+            "id": "sup-4",
+            "name": "TechDirect Global",
+            "rating": 4.9,
+            "verified": true,
+            "whatsapp": "https://wa.me/233500000004"
+        },
+        {
+            "id": "sup-5",
+            "name": "Elite Auto Sourcing",
+            "rating": 4.7,
+            "verified": true,
+            "whatsapp": "https://wa.me/233500000005"
         }
     ],
     "brands": [
@@ -92,7 +63,7 @@ window.SOURCEHUB_DATA = {
             "id": "brand-toyota",
             "name": "Toyota",
             "slug": "toyota",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Toyota_carlogo.svg",
+            "logo": "https://www.vectorlogo.zone/logos/toyota/toyota-ar21.svg",
             "categoryIds": [
                 "cat-vehicles"
             ]
@@ -101,73 +72,27 @@ window.SOURCEHUB_DATA = {
             "id": "brand-mercedes",
             "name": "Mercedes-Benz",
             "slug": "mercedes",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg",
+            "logo": "https://www.vectorlogo.zone/logos/mercedesbenz/mercedesbenz-ar21.svg",
             "categoryIds": [
                 "cat-vehicles"
-            ]
-        },
-        {
-            "id": "brand-dell",
-            "name": "Dell",
-            "slug": "dell",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/8/82/Dell_Logo.png",
-            "categoryIds": [
-                "cat-laptops"
             ]
         },
         {
             "id": "brand-apple",
             "name": "Apple",
             "slug": "apple",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+            "logo": "https://www.vectorlogo.zone/logos/apple/apple-ar21.svg",
             "categoryIds": [
-                "cat-phones",
-                "cat-laptops"
-            ]
-        },
-        {
-            "id": "brand-nike",
-            "name": "Nike",
-            "slug": "nike",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-            "categoryIds": [
-                "cat-shoes"
+                "cat-phones"
             ]
         },
         {
             "id": "brand-samsung",
             "name": "Samsung",
             "slug": "samsung",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg",
+            "logo": "https://www.vectorlogo.zone/logos/samsung/samsung-ar21.svg",
             "categoryIds": [
                 "cat-phones"
-            ]
-        },
-        {
-            "id": "brand-lenovo",
-            "name": "Lenovo",
-            "slug": "lenovo",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lenovo_logo_2015.svg",
-            "categoryIds": [
-                "cat-laptops"
-            ]
-        },
-        {
-            "id": "brand-hp",
-            "name": "HP",
-            "slug": "hp",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg",
-            "categoryIds": [
-                "cat-laptops"
-            ]
-        },
-        {
-            "id": "brand-asus",
-            "name": "Asus",
-            "slug": "asus",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2e/ASUS_Logo.svg",
-            "categoryIds": [
-                "cat-laptops"
             ]
         }
     ],
@@ -178,75 +103,70 @@ window.SOURCEHUB_DATA = {
             "brandId": "brand-toyota",
             "categoryId": "cat-vehicles",
             "images": [
-                "assets/products/Toyota Hilux 2024.webp"
+                "assets/products/toyota_hilux_2024.png"
             ],
-            "description": "Premium Toyota Hilux 2024 sourcing options.",
+            "description": "Premium Toyota Hilux 2024 sourcing options with direct WhatsApp support.",
             "offerings": [
                 {
                     "supplierId": "sup-1",
-                    "price": 450000,
+                    "price": 350000,
                     "condition": "Brand New",
-                    "warranty": "3 Years",
+                    "warranty": "1 Year",
                     "specs": {
-                        "Trim": "Base Model",
-                        "Engine": "Standard 2.4L",
-                        "Interior": "Fabric"
+                        "Type": "Standard",
+                        "Package": "Retail"
                     }
                 },
                 {
                     "supplierId": "sup-2",
-                    "price": 427500,
-                    "condition": "Brand New - Bulk Packaging",
-                    "warranty": "3 Years",
+                    "price": 332500,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
                     "specs": {
-                        "Trim": "Premium",
-                        "Engine": "Upgraded 2.8L",
-                        "Interior": "Leather"
+                        "Type": "OEM",
+                        "Package": "Bulk"
                     }
                 },
                 {
                     "supplierId": "sup-3",
-                    "price": 360000,
+                    "price": 280000,
                     "condition": "Refurbished - Grade A",
                     "warranty": "90 Days",
                     "specs": {
-                        "Trim": "Luxury Edition",
-                        "Engine": "V6 3.5L",
-                        "Interior": "Premium Leather"
+                        "Type": "Refurbished",
+                        "Package": "White Box"
                     }
                 }
             ]
         },
         {
             "id": "p-2",
-            "name": "Mercedes-Benz C-Class",
-            "brandId": "brand-mercedes",
+            "name": "Toyota Land Cruiser 300",
+            "brandId": "brand-toyota",
             "categoryId": "cat-vehicles",
             "images": [
-                "assets/products/Mercedes-Benz C-Class.jpg"
+                "assets/products/toyota_land_cruiser.png"
             ],
-            "description": "Premium Mercedes-Benz C-Class sourcing options.",
+            "description": "Premium Toyota Land Cruiser 300 sourcing options with direct WhatsApp support.",
             "offerings": [
                 {
                     "supplierId": "sup-1",
                     "price": 650000,
                     "condition": "Brand New",
-                    "warranty": "2 Years",
+                    "warranty": "1 Year",
                     "specs": {
-                        "Trim": "Base Model",
-                        "Engine": "Standard 2.4L",
-                        "Interior": "Fabric"
+                        "Type": "Standard",
+                        "Package": "Retail"
                     }
                 },
                 {
                     "supplierId": "sup-2",
                     "price": 617500,
-                    "condition": "Brand New - Bulk Packaging",
-                    "warranty": "2 Years",
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
                     "specs": {
-                        "Trim": "Premium",
-                        "Engine": "Upgraded 2.8L",
-                        "Interior": "Leather"
+                        "Type": "OEM",
+                        "Package": "Bulk"
                     }
                 },
                 {
@@ -255,157 +175,357 @@ window.SOURCEHUB_DATA = {
                     "condition": "Refurbished - Grade A",
                     "warranty": "90 Days",
                     "specs": {
-                        "Trim": "Luxury Edition",
-                        "Engine": "V6 3.5L",
-                        "Interior": "Premium Leather"
+                        "Type": "Refurbished",
+                        "Package": "White Box"
                     }
                 }
             ]
         },
         {
             "id": "p-3",
-            "name": "Dell Latitude 7420",
-            "brandId": "brand-dell",
-            "categoryId": "cat-laptops",
+            "name": "Toyota Camry 2024",
+            "brandId": "brand-toyota",
+            "categoryId": "cat-vehicles",
             "images": [
-                "assets/products/Dell Latitude 7420.jpg"
+                "assets/products/toyota_camry.png"
             ],
-            "description": "Premium Dell Latitude 7420 sourcing options.",
+            "description": "Premium Toyota Camry 2024 sourcing options with direct WhatsApp support.",
             "offerings": [
                 {
                     "supplierId": "sup-1",
-                    "price": 15000,
+                    "price": 250000,
                     "condition": "Brand New",
                     "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Base CPU",
-                        "RAM": "8GB",
-                        "Storage": "256GB SSD"
+                        "Type": "Standard",
+                        "Package": "Retail"
                     }
                 },
                 {
                     "supplierId": "sup-2",
-                    "price": 14250,
-                    "condition": "Brand New - Bulk Packaging",
+                    "price": 237500,
+                    "condition": "Brand New - Bulk",
                     "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Mid-tier CPU",
-                        "RAM": "16GB",
-                        "Storage": "512GB SSD"
+                        "Type": "OEM",
+                        "Package": "Bulk"
                     }
                 },
                 {
                     "supplierId": "sup-3",
-                    "price": 12000,
+                    "price": 200000,
                     "condition": "Refurbished - Grade A",
                     "warranty": "90 Days",
                     "specs": {
-                        "Processor": "High-end CPU",
-                        "RAM": "32GB",
-                        "Storage": "1TB SSD"
+                        "Type": "Refurbished",
+                        "Package": "White Box"
                     }
                 }
             ]
         },
         {
             "id": "p-4",
-            "name": "MacBook Pro M3",
-            "brandId": "brand-apple",
-            "categoryId": "cat-laptops",
+            "name": "Toyota Corolla 2024",
+            "brandId": "brand-toyota",
+            "categoryId": "cat-vehicles",
             "images": [
-                "assets/products/mac-studio-front.jpg"
+                "assets/products/toyota_corolla.png"
             ],
-            "description": "Premium MacBook Pro M3 sourcing options.",
+            "description": "Premium Toyota Corolla 2024 sourcing options with direct WhatsApp support.",
             "offerings": [
                 {
                     "supplierId": "sup-1",
-                    "price": 25000,
+                    "price": 180000,
                     "condition": "Brand New",
                     "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Base CPU",
-                        "RAM": "8GB",
-                        "Storage": "256GB SSD"
+                        "Type": "Standard",
+                        "Package": "Retail"
                     }
                 },
                 {
                     "supplierId": "sup-2",
-                    "price": 23750,
-                    "condition": "Brand New - Bulk Packaging",
+                    "price": 171000,
+                    "condition": "Brand New - Bulk",
                     "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Mid-tier CPU",
-                        "RAM": "16GB",
-                        "Storage": "512GB SSD"
+                        "Type": "OEM",
+                        "Package": "Bulk"
                     }
                 },
                 {
                     "supplierId": "sup-3",
-                    "price": 20000,
+                    "price": 144000,
                     "condition": "Refurbished - Grade A",
                     "warranty": "90 Days",
                     "specs": {
-                        "Processor": "High-end CPU",
-                        "RAM": "32GB",
-                        "Storage": "1TB SSD"
+                        "Type": "Refurbished",
+                        "Package": "White Box"
                     }
                 }
             ]
         },
         {
             "id": "p-5",
-            "name": "Nike Air Max 90",
-            "brandId": "brand-nike",
-            "categoryId": "cat-shoes",
+            "name": "Toyota RAV4 2024",
+            "brandId": "brand-toyota",
+            "categoryId": "cat-vehicles",
             "images": [
-                "assets/products/nike_af1.png"
+                "assets/products/toyota_rav4.png"
             ],
-            "description": "Premium Nike Air Max 90 sourcing options.",
+            "description": "Premium Toyota RAV4 2024 sourcing options with direct WhatsApp support.",
             "offerings": [
                 {
                     "supplierId": "sup-1",
-                    "price": 1200,
+                    "price": 280000,
                     "condition": "Brand New",
-                    "warranty": "N/A",
+                    "warranty": "1 Year",
                     "specs": {
-                        "Material": "Standard Synth",
-                        "Sizes": "US 7-10",
-                        "Laces": "Standard"
+                        "Type": "Standard",
+                        "Package": "Retail"
                     }
                 },
                 {
                     "supplierId": "sup-2",
-                    "price": 1140,
-                    "condition": "Brand New - Bulk Packaging",
-                    "warranty": "N/A",
+                    "price": 266000,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
                     "specs": {
-                        "Material": "Premium Leather",
-                        "Sizes": "US 7-12",
-                        "Laces": "Extra Pair"
+                        "Type": "OEM",
+                        "Package": "Bulk"
                     }
                 },
                 {
                     "supplierId": "sup-3",
-                    "price": 960,
+                    "price": 224000,
                     "condition": "Refurbished - Grade A",
                     "warranty": "90 Days",
                     "specs": {
-                        "Material": "Primeknit/Mesh",
-                        "Sizes": "Custom Fit",
-                        "Laces": "Reflective"
+                        "Type": "Refurbished",
+                        "Package": "White Box"
                     }
                 }
             ]
         },
         {
             "id": "p-6",
-            "name": "iPhone 15 Pro Max",
+            "name": "Mercedes-Benz C-Class",
+            "brandId": "brand-mercedes",
+            "categoryId": "cat-vehicles",
+            "images": [
+                "assets/products/Mercedes-Benz C-Class.jpg"
+            ],
+            "description": "Premium Mercedes-Benz C-Class sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 450000,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 427500,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 360000,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-7",
+            "name": "Mercedes-Benz G-Class",
+            "brandId": "brand-mercedes",
+            "categoryId": "cat-vehicles",
+            "images": [
+                "assets/products/mercedes_g_class.png"
+            ],
+            "description": "Premium Mercedes-Benz G-Class sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 1200000,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 1140000,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 960000,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-8",
+            "name": "Mercedes-Benz S-Class",
+            "brandId": "brand-mercedes",
+            "categoryId": "cat-vehicles",
+            "images": [
+                "assets/products/mercedes_s_class.png"
+            ],
+            "description": "Premium Mercedes-Benz S-Class sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 950000,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 902500,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 760000,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-9",
+            "name": "Mercedes-Benz E-Class",
+            "brandId": "brand-mercedes",
+            "categoryId": "cat-vehicles",
+            "images": [
+                "assets/products/mercedes_e_class.png"
+            ],
+            "description": "Premium Mercedes-Benz E-Class sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 650000,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 617500,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 520000,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-10",
+            "name": "Mercedes-Benz GLE",
+            "brandId": "brand-mercedes",
+            "categoryId": "cat-vehicles",
+            "images": [
+                "assets/products/mercedes_gle.png"
+            ],
+            "description": "Premium Mercedes-Benz GLE sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 750000,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 712500,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 600000,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-11",
+            "name": "iPhone 17 Pro Max (Upcoming)",
             "brandId": "brand-apple",
             "categoryId": "cat-phones",
             "images": [
-                "assets/products/iphone15pro.png"
+                "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=800"
             ],
-            "description": "Premium iPhone 15 Pro Max sourcing options.",
+            "description": "Premium iPhone 17 Pro Max (Upcoming) sourcing options with direct WhatsApp support.",
             "offerings": [
                 {
                     "supplierId": "sup-1",
@@ -413,20 +533,18 @@ window.SOURCEHUB_DATA = {
                     "condition": "Brand New",
                     "warranty": "1 Year",
                     "specs": {
-                        "Storage": "128GB",
-                        "RAM": "8GB",
-                        "Color": "Standard"
+                        "Type": "Standard",
+                        "Package": "Retail"
                     }
                 },
                 {
                     "supplierId": "sup-2",
                     "price": 17100,
-                    "condition": "Brand New - Bulk Packaging",
+                    "condition": "Brand New - Bulk",
                     "warranty": "1 Year",
                     "specs": {
-                        "Storage": "256GB",
-                        "RAM": "12GB",
-                        "Color": "Premium"
+                        "Type": "OEM",
+                        "Package": "Bulk"
                     }
                 },
                 {
@@ -435,292 +553,273 @@ window.SOURCEHUB_DATA = {
                     "condition": "Refurbished - Grade A",
                     "warranty": "90 Days",
                     "specs": {
-                        "Storage": "512GB",
-                        "RAM": "12GB",
-                        "Color": "Exclusive"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "p-7",
-            "name": "Samsung Galaxy S24 Ultra",
-            "brandId": "brand-samsung",
-            "categoryId": "cat-phones",
-            "images": [
-                "assets/products/Samsung-Galaxy-S24-Ultra-5G-SM-S928B-DS-256GB-12GB-RAM-Factory-Unlocked-GSM-Titanium-Violet_27c8a138-e673-4372-831a-744cb9511b5f.26c52035bd3a5280da10538de73f88ae.avif"
-            ],
-            "description": "Premium Samsung Galaxy S24 Ultra sourcing options.",
-            "offerings": [
-                {
-                    "supplierId": "sup-1",
-                    "price": 17500,
-                    "condition": "Brand New",
-                    "warranty": "1 Year",
-                    "specs": {
-                        "Storage": "128GB",
-                        "RAM": "8GB",
-                        "Color": "Standard"
-                    }
-                },
-                {
-                    "supplierId": "sup-2",
-                    "price": 16625,
-                    "condition": "Brand New - Bulk Packaging",
-                    "warranty": "1 Year",
-                    "specs": {
-                        "Storage": "256GB",
-                        "RAM": "12GB",
-                        "Color": "Premium"
-                    }
-                },
-                {
-                    "supplierId": "sup-3",
-                    "price": 14000,
-                    "condition": "Refurbished - Grade A",
-                    "warranty": "90 Days",
-                    "specs": {
-                        "Storage": "512GB",
-                        "RAM": "12GB",
-                        "Color": "Exclusive"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "p-8",
-            "name": "Toyota Land Cruiser 300",
-            "brandId": "brand-toyota",
-            "categoryId": "cat-vehicles",
-            "images": [
-                "assets/products/toyota_land_cruiser.png"
-            ],
-            "description": "Premium Toyota Land Cruiser 300 sourcing options.",
-            "offerings": [
-                {
-                    "supplierId": "sup-1",
-                    "price": 850000,
-                    "condition": "Brand New",
-                    "warranty": "3 Years",
-                    "specs": {
-                        "Trim": "Base Model",
-                        "Engine": "Standard 2.4L",
-                        "Interior": "Fabric"
-                    }
-                },
-                {
-                    "supplierId": "sup-2",
-                    "price": 807500,
-                    "condition": "Brand New - Bulk Packaging",
-                    "warranty": "3 Years",
-                    "specs": {
-                        "Trim": "Premium",
-                        "Engine": "Upgraded 2.8L",
-                        "Interior": "Leather"
-                    }
-                },
-                {
-                    "supplierId": "sup-3",
-                    "price": 680000,
-                    "condition": "Refurbished - Grade A",
-                    "warranty": "1 Year",
-                    "specs": {
-                        "Trim": "Luxury Edition",
-                        "Engine": "V6 3.5L",
-                        "Interior": "Premium Leather"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "p-9",
-            "name": "Toyota Camry 2024",
-            "brandId": "brand-toyota",
-            "categoryId": "cat-vehicles",
-            "images": [
-                "assets/products/toyota_camry.png"
-            ],
-            "description": "Premium Toyota Camry 2024 sourcing options.",
-            "offerings": [
-                {
-                    "supplierId": "sup-1",
-                    "price": 350000,
-                    "condition": "Brand New",
-                    "warranty": "3 Years",
-                    "specs": {
-                        "Trim": "Base Model",
-                        "Engine": "Standard 2.4L",
-                        "Interior": "Fabric"
-                    }
-                },
-                {
-                    "supplierId": "sup-2",
-                    "price": 332500,
-                    "condition": "Brand New - Bulk Packaging",
-                    "warranty": "3 Years",
-                    "specs": {
-                        "Trim": "Premium",
-                        "Engine": "Upgraded 2.8L",
-                        "Interior": "Leather"
-                    }
-                },
-                {
-                    "supplierId": "sup-3",
-                    "price": 280000,
-                    "condition": "Refurbished - Grade A",
-                    "warranty": "1 Year",
-                    "specs": {
-                        "Trim": "Luxury Edition",
-                        "Engine": "V6 3.5L",
-                        "Interior": "Premium Leather"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "p-10",
-            "name": "Mercedes-Benz G-Class",
-            "brandId": "brand-mercedes",
-            "categoryId": "cat-vehicles",
-            "images": [
-                "assets/products/mercedes_g_class.png"
-            ],
-            "description": "Premium Mercedes-Benz G-Class sourcing options.",
-            "offerings": [
-                {
-                    "supplierId": "sup-1",
-                    "price": 1500000,
-                    "condition": "Brand New",
-                    "warranty": "3 Years",
-                    "specs": {
-                        "Trim": "Base Model",
-                        "Engine": "Standard 2.4L",
-                        "Interior": "Fabric"
-                    }
-                },
-                {
-                    "supplierId": "sup-2",
-                    "price": 1425000,
-                    "condition": "Brand New - Bulk Packaging",
-                    "warranty": "3 Years",
-                    "specs": {
-                        "Trim": "Premium",
-                        "Engine": "Upgraded 2.8L",
-                        "Interior": "Leather"
-                    }
-                },
-                {
-                    "supplierId": "sup-3",
-                    "price": 1200000,
-                    "condition": "Refurbished - Grade A",
-                    "warranty": "1 Year",
-                    "specs": {
-                        "Trim": "Luxury Edition",
-                        "Engine": "V6 3.5L",
-                        "Interior": "Premium Leather"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "p-11",
-            "name": "Mercedes-Benz S-Class",
-            "brandId": "brand-mercedes",
-            "categoryId": "cat-vehicles",
-            "images": [
-                "assets/products/mercedes_s_class.png"
-            ],
-            "description": "Premium Mercedes-Benz S-Class sourcing options.",
-            "offerings": [
-                {
-                    "supplierId": "sup-1",
-                    "price": 1200000,
-                    "condition": "Brand New",
-                    "warranty": "3 Years",
-                    "specs": {
-                        "Trim": "Base Model",
-                        "Engine": "Standard 2.4L",
-                        "Interior": "Fabric"
-                    }
-                },
-                {
-                    "supplierId": "sup-2",
-                    "price": 1140000,
-                    "condition": "Brand New - Bulk Packaging",
-                    "warranty": "3 Years",
-                    "specs": {
-                        "Trim": "Premium",
-                        "Engine": "Upgraded 2.8L",
-                        "Interior": "Leather"
-                    }
-                },
-                {
-                    "supplierId": "sup-3",
-                    "price": 960000,
-                    "condition": "Refurbished - Grade A",
-                    "warranty": "1 Year",
-                    "specs": {
-                        "Trim": "Luxury Edition",
-                        "Engine": "V6 3.5L",
-                        "Interior": "Premium Leather"
+                        "Type": "Refurbished",
+                        "Package": "White Box"
                     }
                 }
             ]
         },
         {
             "id": "p-12",
-            "name": "Lenovo ThinkPad X1 Carbon",
-            "brandId": "brand-lenovo",
-            "categoryId": "cat-laptops",
+            "name": "iPhone 16 Pro",
+            "brandId": "brand-apple",
+            "categoryId": "cat-phones",
             "images": [
-                "assets/products/Lenovo ThinkPad X1 Carbon.avif"
+                "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=800"
             ],
-            "description": "Premium Lenovo ThinkPad X1 Carbon sourcing options.",
+            "description": "Premium iPhone 16 Pro sourcing options with direct WhatsApp support.",
             "offerings": [
                 {
                     "supplierId": "sup-1",
-                    "price": 18000,
+                    "price": 15000,
                     "condition": "Brand New",
-                    "warranty": "3 Years",
+                    "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Intel Core i5",
-                        "RAM": "8GB LPDDR5",
-                        "Storage": "256GB PCIe SSD"
+                        "Type": "Standard",
+                        "Package": "Retail"
                     }
                 },
                 {
                     "supplierId": "sup-2",
-                    "price": 20000,
+                    "price": 14250,
                     "condition": "Brand New - Bulk",
-                    "warranty": "3 Years",
+                    "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Intel Core i7",
-                        "RAM": "16GB LPDDR5",
-                        "Storage": "512GB PCIe SSD"
+                        "Type": "OEM",
+                        "Package": "Bulk"
                     }
                 },
                 {
                     "supplierId": "sup-3",
-                    "price": 24000,
+                    "price": 12000,
                     "condition": "Refurbished - Grade A",
-                    "warranty": "1 Year",
+                    "warranty": "90 Days",
                     "specs": {
-                        "Processor": "Intel Core i7",
-                        "RAM": "32GB LPDDR5",
-                        "Storage": "1TB PCIe SSD"
+                        "Type": "Refurbished",
+                        "Package": "White Box"
                     }
                 }
             ]
         },
         {
             "id": "p-13",
-            "name": "HP Spectre x360",
-            "brandId": "brand-hp",
-            "categoryId": "cat-laptops",
+            "name": "iPhone 15 Pro Max",
+            "brandId": "brand-apple",
+            "categoryId": "cat-phones",
             "images": [
-                "assets/products/HP Spectre x360.jpg"
+                "assets/products/iphone_15_pro_max.png"
             ],
-            "description": "Premium HP Spectre x360 UX3405 options.",
+            "description": "Premium iPhone 15 Pro Max sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 13000,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 12350,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 10400,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-14",
+            "name": "iPhone 14 Pro",
+            "brandId": "brand-apple",
+            "categoryId": "cat-phones",
+            "images": [
+                "https://images.unsplash.com/photo-1678911820864-e2c567c655d7?auto=format&fit=crop&q=80&w=800"
+            ],
+            "description": "Premium iPhone 14 Pro sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 10000,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 9500,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 8000,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-15",
+            "name": "iPhone 13 Pro",
+            "brandId": "brand-apple",
+            "categoryId": "cat-phones",
+            "images": [
+                "https://images.unsplash.com/photo-1634493907317-a46b53b81882?auto=format&fit=crop&q=80&w=800"
+            ],
+            "description": "Premium iPhone 13 Pro sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 8500,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 8075,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 6800,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-16",
+            "name": "iPhone 12 Pro",
+            "brandId": "brand-apple",
+            "categoryId": "cat-phones",
+            "images": [
+                "https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?auto=format&fit=crop&q=80&w=800"
+            ],
+            "description": "Premium iPhone 12 Pro sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 6500,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 6175,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 5200,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-17",
+            "name": "Samsung Galaxy S24 Ultra",
+            "brandId": "brand-samsung",
+            "categoryId": "cat-phones",
+            "images": [
+                "assets/products/samsung_s24_ultra.png"
+            ],
+            "description": "Premium Samsung Galaxy S24 Ultra sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 14000,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 13300,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 11200,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-18",
+            "name": "Samsung Galaxy Z Fold 5",
+            "brandId": "brand-samsung",
+            "categoryId": "cat-phones",
+            "images": [
+                "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&q=80&w=800"
+            ],
+            "description": "Premium Samsung Galaxy Z Fold 5 sourcing options with direct WhatsApp support.",
             "offerings": [
                 {
                     "supplierId": "sup-1",
@@ -728,76 +827,154 @@ window.SOURCEHUB_DATA = {
                     "condition": "Brand New",
                     "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Core Ultra 5 125H",
-                        "RAM": "16GB",
-                        "Storage": "512GB Gen4 SSD"
+                        "Type": "Standard",
+                        "Package": "Retail"
                     }
                 },
                 {
                     "supplierId": "sup-2",
-                    "price": 18500,
+                    "price": 15200,
                     "condition": "Brand New - Bulk",
                     "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Core Ultra 7 155H",
-                        "RAM": "16GB",
-                        "Storage": "1TB Gen4 SSD"
+                        "Type": "OEM",
+                        "Package": "Bulk"
                     }
                 },
                 {
                     "supplierId": "sup-3",
-                    "price": 22000,
+                    "price": 12800,
                     "condition": "Refurbished - Grade A",
                     "warranty": "90 Days",
                     "specs": {
-                        "Processor": "Core Ultra 7 155H",
-                        "RAM": "32GB",
-                        "Storage": "2TB Gen4 SSD"
+                        "Type": "Refurbished",
+                        "Package": "White Box"
                     }
                 }
             ]
         },
         {
-            "id": "p-14",
-            "name": "Asus ROG Zephyrus G14",
-            "brandId": "brand-asus",
-            "categoryId": "cat-laptops",
+            "id": "p-19",
+            "name": "Samsung Galaxy S23 FE",
+            "brandId": "brand-samsung",
+            "categoryId": "cat-phones",
             "images": [
-                "assets/products/Asus ROG Zephyrus G14.webp"
+                "https://images.unsplash.com/photo-1567581935884-3349723552ca?auto=format&fit=crop&q=80&w=800"
             ],
-            "description": "Premium Asus ROG Zephyrus G14 Gaming Laptop.",
+            "description": "Premium Samsung Galaxy S23 FE sourcing options with direct WhatsApp support.",
             "offerings": [
                 {
                     "supplierId": "sup-1",
-                    "price": 20000,
+                    "price": 6500,
                     "condition": "Brand New",
                     "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Ryzen 7 8845HS",
-                        "GPU": "RTX 4050 6GB",
-                        "Storage": "512GB SSD"
+                        "Type": "Standard",
+                        "Package": "Retail"
                     }
                 },
                 {
                     "supplierId": "sup-2",
-                    "price": 23000,
+                    "price": 6175,
                     "condition": "Brand New - Bulk",
                     "warranty": "1 Year",
                     "specs": {
-                        "Processor": "Ryzen 9 8945HS",
-                        "GPU": "RTX 4060 8GB",
-                        "Storage": "1TB SSD"
+                        "Type": "OEM",
+                        "Package": "Bulk"
                     }
                 },
                 {
                     "supplierId": "sup-3",
-                    "price": 28000,
+                    "price": 5200,
                     "condition": "Refurbished - Grade A",
-                    "warranty": "6 Months",
+                    "warranty": "90 Days",
                     "specs": {
-                        "Processor": "Ryzen 9 8945HS",
-                        "GPU": "RTX 4070 8GB",
-                        "Storage": "2TB SSD"
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-20",
+            "name": "Samsung Galaxy A54",
+            "brandId": "brand-samsung",
+            "categoryId": "cat-phones",
+            "images": [
+                "https://images.unsplash.com/photo-1678911820864-e2c567c655d7?auto=format&fit=crop&q=80&w=800"
+            ],
+            "description": "Premium Samsung Galaxy A54 sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 4500,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 4275,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 3600,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "p-21",
+            "name": "Samsung Galaxy Tab S9",
+            "brandId": "brand-samsung",
+            "categoryId": "cat-phones",
+            "images": [
+                "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?auto=format&fit=crop&q=80&w=800"
+            ],
+            "description": "Premium Samsung Galaxy Tab S9 sourcing options with direct WhatsApp support.",
+            "offerings": [
+                {
+                    "supplierId": "sup-1",
+                    "price": 9000,
+                    "condition": "Brand New",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "Standard",
+                        "Package": "Retail"
+                    }
+                },
+                {
+                    "supplierId": "sup-2",
+                    "price": 8550,
+                    "condition": "Brand New - Bulk",
+                    "warranty": "1 Year",
+                    "specs": {
+                        "Type": "OEM",
+                        "Package": "Bulk"
+                    }
+                },
+                {
+                    "supplierId": "sup-3",
+                    "price": 7200,
+                    "condition": "Refurbished - Grade A",
+                    "warranty": "90 Days",
+                    "specs": {
+                        "Type": "Refurbished",
+                        "Package": "White Box"
                     }
                 }
             ]
@@ -808,16 +985,11 @@ window.SOURCEHUB_DATA = {
 window.DataService = {
     getProducts() {
         const brands = window.SOURCEHUB_DATA.brands;
-        const seedProducts = window.SOURCEHUB_DATA.products.map(p => {
+        const products = window.SOURCEHUB_DATA.products.map(p => {
             const b = brands.find(brand => brand.id === p.brandId);
             return { ...p, brandName: b ? b.name : p.brandId };
         });
-        // Merge with user-added products from localStorage
-        const userProducts = JSON.parse(localStorage.getItem('sourcehub-user-products') || '[]').map(p => {
-            const b = brands.find(brand => brand.id === p.brandId);
-            return { ...p, brandName: b ? b.name : p.brandId };
-        });
-        return Promise.resolve([...seedProducts, ...userProducts]);
+        return Promise.resolve(products);
     },
 
     getBrands() {
@@ -827,10 +999,9 @@ window.DataService = {
     getCategories() {
         return Promise.resolve(window.SOURCEHUB_DATA.categories);
     },
-
+    
     getSuppliers() {
-        const userSuppliers = JSON.parse(localStorage.getItem('sourcehub-user-suppliers') || '[]');
-        return Promise.resolve([...window.SOURCEHUB_DATA.suppliers, ...userSuppliers]);
+        return Promise.resolve(window.SOURCEHUB_DATA.suppliers);
     },
 
     async getProductById(id) {
@@ -856,10 +1027,5 @@ window.DataService = {
     async getProductsByBrand(brandId) {
         const products = await this.getProducts();
         return products.filter(p => p.brandId === brandId);
-    },
-
-    async getSupplierById(id) {
-        const suppliers = await this.getSuppliers();
-        return suppliers.find(s => s.id === id);
     }
 };
