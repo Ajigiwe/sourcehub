@@ -6,27 +6,82 @@ window.Views = {
     Home: async () => {
         const categories = await window.DataService.getCategories();
 
-        const hero = window.Utils.createElement('section', { className: 'hero section bg-secondary' },
-            window.Utils.createElement('div', { className: 'container text-center' },
-                window.Utils.createElement('h1', { className: 'hero-title' }, 'Find Your Next Global Supplier'),
-                window.Utils.createElement('p', { className: 'hero-subtitle' }, 'The fastest way to discover products and connect with manufacturers.'),
-                // Update hero stats for new scale
-                window.Utils.createElement('div', { className: 'hero-stats' },
-                    window.Utils.createElement('div', { className: 'stat-item' }, window.Utils.createElement('strong', {}, '3'), ' Verified Suppliers'),
-                    window.Utils.createElement('div', { className: 'stat-item' }, window.Utils.createElement('strong', {}, '6'), ' Premium Brands'),
-                    window.Utils.createElement('div', { className: 'stat-item' }, window.Utils.createElement('strong', {}, '4'), ' Core Categories')
+        // --- Hero Section ---
+        const hero = window.Utils.createElement('section', { 
+            className: 'hero',
+            style: 'padding: 100px 0; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; position: relative; overflow: hidden;'
+        },
+            // Background Decorative Elements
+            window.Utils.createElement('div', { style: 'position: absolute; top: -10%; right: -5%; width: 400px; height: 400px; background: rgba(37, 99, 235, 0.1); filter: blur(100px); border-radius: 50%;' }),
+            
+            window.Utils.createElement('div', { className: 'container grid', style: 'grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 64px;' },
+                window.Utils.createElement('div', { className: 'hero-content' },
+                    window.Utils.createElement('span', { style: 'color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 16px; display: block;' }, 'Global B2B Sourcing Platform'),
+                    window.Utils.createElement('h1', { style: 'font-size: 4rem; line-height: 1.1; font-weight: 800; margin-bottom: 24px;' }, 
+                        'Source Products ',
+                        window.Utils.createElement('span', { style: 'color: var(--accent-color);' }, 'Directly'),
+                        ' from the Source'
+                    ),
+                    window.Utils.createElement('p', { style: 'font-size: 1.25rem; opacity: 0.8; margin-bottom: 40px; max-width: 600px;' }, 
+                        'The professional gateway for bulk vehicle and mobile electronics procurement. Connect with verified global manufacturers in one centralized hub.'
+                    ),
+                    window.Utils.createElement('div', { className: 'flex gap-16' },
+                        window.Utils.createElement('a', { href: '#/products', className: 'btn-primary', style: 'padding: 16px 32px; font-size: 1.1rem;' }, 'Browse Catalog'),
+                        window.Utils.createElement('a', { href: '#/categories', className: 'btn-outline', style: 'color: white; border-color: rgba(255,255,255,0.3); padding: 16px 32px; font-size: 1.1rem;' }, 'Explore Categories')
+                    )
+                ),
+                window.Utils.createElement('div', { className: 'hero-visual', style: 'position: relative;' },
+                    window.Utils.createElement('img', { 
+                        src: 'assets/products/toyota_hilux_2024.png', 
+                        style: 'width: 120%; transform: translateX(10%) rotate(-5deg); filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));' 
+                    })
                 )
             )
         );
 
+        // --- Trust Bar ---
+        const trustBar = window.Utils.createElement('section', { style: 'padding: 32px 0; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);' },
+            window.Utils.createElement('div', { className: 'container' },
+                window.Utils.createElement('p', { style: 'text-align: center; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px;' }, 'Trusted by industry leaders worldwide'),
+                window.Utils.createElement('div', { className: 'flex justify-between items-center opacity-50 grayscale', style: 'gap: 48px; flex-wrap: wrap; justify-content: center;' },
+                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/toyota/toyota-ar21.svg', style: 'height: 30px;' }),
+                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/mercedesbenz/mercedesbenz-ar21.svg', style: 'height: 30px;' }),
+                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/apple/apple-ar21.svg', style: 'height: 30px;' }),
+                    window.Utils.createElement('img', { src: 'https://www.vectorlogo.zone/logos/samsung/samsung-ar21.svg', style: 'height: 30px;' })
+                )
+            )
+        );
+
+        // --- Categories Section ---
         const categoriesSection = window.Utils.createElement('section', { className: 'section container' },
-            window.Utils.createElement('h2', { className: 'section-title' }, 'Choose a Category to Begin Sourcing'),
-            window.Utils.createElement('div', { className: 'category-grid grid' },
+            window.Utils.createElement('div', { className: 'section-header', style: 'margin-bottom: 48px; text-align: center;' },
+                window.Utils.createElement('h2', { style: 'font-size: 2.5rem; margin-bottom: 16px;' }, 'Strategic Sourcing Categories'),
+                window.Utils.createElement('p', { className: 'text-muted', style: 'max-width: 600px; margin: 0 auto;' }, 'Specialized procurement channels for high-demand global commodities.')
+            ),
+            window.Utils.createElement('div', { className: 'category-grid' },
                 ...categories.map(c => window.CategoryTile(c))
             )
         );
 
-        return window.Utils.createElement('div', {}, hero, categoriesSection);
+        // --- How It Works ---
+        const howItWorks = window.Utils.createElement('section', { style: 'padding: 100px 0; background: var(--white);' },
+            window.Utils.createElement('div', { className: 'container' },
+                window.Utils.createElement('h2', { style: 'text-align: center; margin-bottom: 64px; font-size: 2.5rem;' }, 'Professional Sourcing Workflow'),
+                window.Utils.createElement('div', { className: 'grid', style: 'grid-template-columns: repeat(3, 1fr); gap: 48px;' },
+                    [
+                        { step: '01', title: 'Discover', desc: 'Browse our curated catalog of premium brands and verified global suppliers.' },
+                        { step: '02', title: 'Connect', desc: 'Engage directly with manufacturers via WhatsApp for instant quotes and lead times.' },
+                        { step: '03', title: 'Procure', desc: 'Finalize terms, verify documentation, and secure your inventory shipments.' }
+                    ].map(item => window.Utils.createElement('div', { className: 'step-card' },
+                        window.Utils.createElement('span', { style: 'font-size: 3rem; font-weight: 900; color: var(--accent-color); opacity: 0.2; display: block; margin-bottom: -20px;' }, item.step),
+                        window.Utils.createElement('h3', { style: 'font-size: 1.5rem; margin-bottom: 16px; position: relative;' }, item.title),
+                        window.Utils.createElement('p', { className: 'text-muted' }, item.desc)
+                    ))
+                )
+            )
+        );
+
+        return window.Utils.createElement('div', {}, hero, trustBar, categoriesSection, howItWorks);
     },
 
     Products: async () => {
