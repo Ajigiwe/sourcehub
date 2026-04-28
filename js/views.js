@@ -187,9 +187,7 @@ window.Views = {
                 window.Utils.createElement('div', {},
                     window.Utils.createElement('h1', {}, brand.name),
                     window.Utils.createElement('p', {}, brand.about),
-                    window.Utils.createElement('div', { className: 'brand-contact-info', style: 'margin-top: 16px;' },
-                        brand.website ? window.Utils.createElement('a', { href: brand.website, target: '_blank', className: 'btn-link' }, 'Visit Website') : ''
-                    )
+                    window.Utils.createElement('div', { className: 'brand-contact-info', style: 'margin-top: 16px;' })
                 )
             ),
             window.Utils.createElement('h2', {}, 'Products from this Brand'),
@@ -213,8 +211,8 @@ window.Views = {
         const category = await window.DataService.getCategoryBySlug(params.slug);
         if (!category) return 'Category not found';
 
-        const products = await window.DataService.getProducts();
-        const categoryProducts = products.filter(p => p.categoryId === category.id);
+        // Fetch brands that fall under this category, NOT products.
+        const brands = await window.DataService.getBrandsByCategory(category.id);
 
         return window.Utils.createElement('div', { className: 'section container' },
             window.Utils.createElement('div', { className: 'flex items-center gap-16', style: 'margin-bottom: 32px;' },
@@ -224,9 +222,9 @@ window.Views = {
                     window.Utils.createElement('p', { className: 'text-muted' }, category.description)
                 )
             ),
-            window.Utils.createElement('h2', { style: 'margin-bottom: 24px;' }, 'Available Products'),
-            window.Utils.createElement('div', { className: 'product-grid grid' },
-                ...categoryProducts.map(window.ProductCard)
+            window.Utils.createElement('h2', { style: 'margin-bottom: 24px;' }, 'Select a Brand'),
+            window.Utils.createElement('div', { className: 'brand-grid grid' },
+                ...brands.map(window.BrandCard)
             )
         );
     },
