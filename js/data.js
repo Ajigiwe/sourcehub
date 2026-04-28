@@ -8,7 +8,7 @@ window.SOURCEHUB_DATA = {
             "id": "cat-laptops",
             "name": "Laptops",
             "slug": "laptops",
-            "icon": "≡ƒÆ╗",
+            "icon": "💻",
             "image": "assets/categories/laptops.png",
             "description": "Professional Computing Devices"
         },
